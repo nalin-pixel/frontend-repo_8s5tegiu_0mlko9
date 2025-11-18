@@ -18,8 +18,8 @@ export default function AgentsGrid() {
       const data = await res.json()
       setAgents(data)
     } catch (e) {
-      setError('Could not load agents. Showing samples.')
-      // Fallback sample data while backend integration is pending
+      setError('Nie udało się załadować agentów. Pokazuję przykładowe pozycje.')
+      // Fallback sample data
       setAgents([
         { id: 'a1', name: 'Sales Copilot', price: 99, rating: 4.8, skills: ['lead-qual', 'email', 'crm'], problems: ['low-leads', 'slow-outreach'] },
         { id: 'a2', name: 'Support AutoPilot', price: 149, rating: 4.6, skills: ['summarize', 'classify', 'routing'], problems: ['ticket-backlog'] },
@@ -46,16 +46,16 @@ export default function AgentsGrid() {
     <section id="agents" className="relative py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-white flex items-center gap-2"><Bot className="h-5 w-5" /> Featured Agents</h2>
+          <h2 className="text-xl font-semibold text-white flex items-center gap-2"><Bot className="h-5 w-5" /> Polecani agenci</h2>
           <div className="flex items-center gap-2">
             <div className="relative">
-              <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Search agents..." className="pl-8 pr-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-200 placeholder:text-slate-400 focus:outline-none" />
+              <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Szukaj agentów…" className="pl-8 pr-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-200 placeholder:text-slate-400 focus:outline-none" />
               <Sparkles className="h-4 w-4 text-slate-400 absolute left-2 top-1/2 -translate-y-1/2" />
             </div>
             <div className="relative">
               <Filter className="h-4 w-4 text-slate-400 absolute left-2 top-1/2 -translate-y-1/2" />
               <select value={skill} onChange={e => setSkill(e.target.value)} className="appearance-none pl-8 pr-8 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-200 focus:outline-none">
-                <option value="">All skills</option>
+                <option value="">Wszystkie umiejętności</option>
                 {skillPool.map(s => (
                   <option value={s} key={s}>{s}</option>
                 ))}
@@ -63,7 +63,7 @@ export default function AgentsGrid() {
             </div>
             <button onClick={fetchAgents} className="inline-flex items-center gap-1 px-2.5 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 text-sm">
               <RefreshCcw className="h-4 w-4" />
-              Refresh
+              Odśwież
             </button>
           </div>
         </div>
@@ -113,8 +113,8 @@ function AgentCard({ agent }) {
           ))}
         </div>
         <div className="mt-4 flex items-center justify-between">
-          <span className="text-slate-300 text-sm">From ${agent.price}/mo</span>
-          <button className="text-xs px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white border border-white/10">Compare</button>
+          <span className="text-slate-300 text-sm">Od ${agent.price}/mies.</span>
+          <button className="text-xs px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/15 text-white border border-white/10">Porównaj</button>
         </div>
       </div>
     </div>

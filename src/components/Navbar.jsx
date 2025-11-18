@@ -30,23 +30,23 @@ export default function Navbar() {
         </a>
 
         <nav className="hidden md:flex items-center gap-2">
-          <NavLink label="Agents" href="#agents" />
-          <NavLink label="Skills" href="#skills" />
-          <NavLink label="Graph" href="#graph" />
-          <NavLink label="Compare" href="#compare" />
+          <NavLink label="Agenci" href="#agents" />
+          <NavLink label="Umiejętności" href="#skills" />
+          <NavLink label="Graf" href="#graph" />
+          <NavLink label="Porównaj" href="#compare" />
           <NavLink label="ROI" href="#roi" />
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
           <div className="relative">
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-            <input placeholder="Search agents..." className="pl-8 pr-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50" />
+            <input placeholder="Szukaj agentów…" className="pl-8 pr-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-slate-200 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50" />
           </div>
           <ThemeToggle />
-          <a href="#roi" className="px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-orange-400 text-white shadow-lg shadow-fuchsia-500/20 hover:shadow-fuchsia-500/30 transition-shadow">Try ROI</a>
+          <a href="#roi" className="px-3 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-orange-400 text-white shadow-lg shadow-fuchsia-500/20 hover:shadow-fuchsia-500/30 transition-shadow">Sprawdź ROI</a>
         </div>
 
-        <button aria-label="Open menu" onClick={() => setOpen(v => !v)} className="md:hidden text-white p-2">
+        <button aria-label="Otwórz menu" onClick={() => setOpen(v => !v)} className="md:hidden text-white p-2">
           {open ? <X /> : <Menu />}
         </button>
       </div>
@@ -55,10 +55,10 @@ export default function Navbar() {
         <div className="md:hidden border-t border-white/10 bg-slate-900/80">
           <div className="px-4 py-3 space-y-2">
             {[
-              { label: 'Agents', href: '#agents' },
-              { label: 'Skills', href: '#skills' },
-              { label: 'Graph', href: '#graph' },
-              { label: 'Compare', href: '#compare' },
+              { label: 'Agenci', href: '#agents' },
+              { label: 'Umiejętności', href: '#skills' },
+              { label: 'Graf', href: '#graph' },
+              { label: 'Porównaj', href: '#compare' },
               { label: 'ROI', href: '#roi' },
             ].map(i => (
               <a key={i.href} href={i.href} className="block text-slate-200/90 hover:text-white">
