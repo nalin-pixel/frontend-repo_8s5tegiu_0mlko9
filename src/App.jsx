@@ -4,6 +4,7 @@ import AgentsGrid from './components/AgentsGrid'
 import SkillGraph from './components/SkillGraph'
 import ROICalculator from './components/ROICalculator'
 import Footer from './components/Footer'
+import Reveal from './components/Reveal'
 
 function App() {
   return (
@@ -13,9 +14,15 @@ function App() {
       <Navbar />
       <main className="relative">
         <Hero />
-        <AgentsGrid />
-        <SkillGraph />
-        <ROICalculator />
+        <Reveal>
+          <AgentsGrid />
+        </Reveal>
+        <Reveal delay={100}>
+          <SkillGraph />
+        </Reveal>
+        <Reveal delay={150}>
+          <ROICalculator />
+        </Reveal>
         <Footer />
       </main>
     </div>
